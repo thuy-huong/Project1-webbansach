@@ -1,7 +1,16 @@
 @extends('layout')
 @section('home')
-    <div class="slider">
-           <img src="{{('public/front_end/images/slider_2.webp')}}" alt="sliser" class="img-fluid">
+    <div id="slider">
+        <div class="aspect-ratio-169">
+            <img src="{{('public/front_end/images/slider_1.webp')}}" class="img-fluid" >
+            <img src="{{('public/front_end/images/slider_2.webp')}}" class="img-fluid">
+            <img src="{{('public/front_end/images/slider_3.webp')}}" class="img-fluid" >
+        </div>
+        <div class="dot-container">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
     </div>
     <div class="about-title">
             <div class="container my-2">

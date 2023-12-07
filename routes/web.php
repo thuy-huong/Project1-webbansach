@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IntroController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryProduct;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,12 +17,17 @@ use App\Http\Controllers\AdminController;
 */
 //frontend
 Route::get('/', [HomeController::class,'index']);
-
 Route::get('/trang-chu', [HomeController::class, 'index']);
-
 Route::get('/gioi-thieu', [IntroController::class, 'index']);
 
 //backend
 Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/dashboard', [AdminController::class, 'show_dashboard']);
+Route::post('/admin_dashboard', [AdminController::class, 'dashboard']);
+Route::get('/logout', [AdminController::class, 'logout']);
+
+//catelogy
+Route::get('/list-category', [CategoryProduct::class, 'list']);
+Route::get('/add-category', [CategoryProduct::class, 'add']);
 
     

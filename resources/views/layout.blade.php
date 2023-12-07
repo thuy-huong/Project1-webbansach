@@ -54,7 +54,7 @@
                                 </div>
                                 <div class="col-9">
                                     Xin chào!</br>
-                                    <strong class="text-danger">Đăng nhập</strong>
+                                    <a href=""><strong class="text-danger">Đăng nhập</strong></a>
                                 </div>
                             </div> 
                         </div>
@@ -101,7 +101,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a href="#">DỊCH VỤ HTXB</a></li>
+                    <li><a href="https://hoptacxuatban.alphabooks.vn/">DỊCH VỤ HTXB</a></li>
                     <li><a href="#">TIN TỨC - SỰ KIỆN</a>
                         <ul class="sub-menu">
                             <li><a href="#">Tin tức</a>
@@ -178,5 +178,33 @@
             $('.sub-menu').parent('li').addClass('has-child');
         });
     </script>
+    
 </body>
+<script>
+    const imgPosition = document.querySelectorAll(".aspect-ratio-169 img")
+    const imgContainer = document.querySelector('.aspect-ratio-169')
+    const dotItem = document.querySelectorAll(".dot")
+    let imgNuber = imgPosition.length
+    let index = 0
+    imgPosition.forEach(function(image,index){
+        image.style.left = index*100 + "%"
+        dotItem[index].addEventListener("click",function(){
+            slider (index)
+        })           
+    })
+    function imgSlide (){
+        index++;
+        console.log(index)
+        if (index>=imgNuber) {index=0}
+       slider (index)
+    }
+    function slider(index){
+        imgContainer.style.left = "-" +index*100+"%"
+        const dotActive = document.querySelector('.active')
+        dotActive.classList.remove("active")
+        dotItem[index].classList.add("active")
+    }
+    setInterval(imgSlide, 5000);
+
+</script>
 </html>

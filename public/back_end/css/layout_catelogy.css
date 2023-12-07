@@ -1,0 +1,52 @@
+
+.form-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+h2 {
+    text-align: center;
+}
+.form-group {
+    margin-bottom: 10px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-group input[type="text"],
+  .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+select#trangthái {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #dc6e4c;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+  .form-group button:hover {
+    background-color: #e37a4d;
+}
+
+td a {
+    color: red;
+    font-size: 14px;
+    width: auto;
+    padding: 10px;
+    padding-left: 30%;
+}
