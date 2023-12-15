@@ -77,6 +77,8 @@
             @yield('admin_content')
             @yield('add_category')
             @yield('list_category')
+            @yield('edit_category')
+
             
         </setion>
     </div>

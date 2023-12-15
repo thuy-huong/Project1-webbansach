@@ -29,5 +29,10 @@ Route::get('/logout', [AdminController::class, 'logout']);
 //catelogy
 Route::get('/list-category', [CategoryProduct::class, 'list']);
 Route::get('/add-category', [CategoryProduct::class, 'add']);
+Route::post('/save-category', [CategoryProduct::class, 'save']);
 
-    
+Route::get('/edit-category/{category_id}', [CategoryProduct::class, 'edit']);
+Route::get('/delete-category/{category_id}', [CategoryProduct::class, 'delete']);
+Route::post('/update-category/{category_id}', [CategoryProduct::class, 'update']);
+
+///product

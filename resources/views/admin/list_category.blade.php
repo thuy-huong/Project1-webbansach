@@ -2,9 +2,18 @@
 @section('list_category')
 <div class="form-container" >
     <table border="1px" width="100%" cellspacing="0" cellpadding="0" >
+        <h2>Danh sách danh mục sản phẩm</h2>
+        <?php
+            
+        $message = session()->get('message');
+        if($message){
+            echo '<span class="text-alert" color="red">'.$message.'</span>' ;
+            session()->put('message', null);
+        }
+    ?> 
+
         <thead>
             <tr>
-                <th>STT</th>
                 <th>Mã danh mục</th>
                 <th>Tên danh mục</th>
                 <th>Trạng thái</th>       
@@ -12,18 +21,29 @@
             </tr>
         </thead>
         <tbody>
+            @foreach($list_category as $key => $cate_pro)
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{{ $cate_pro->category_id }}</td>
+                <td>{{ $cate_pro->category_name }}</td>
                 <td>
-                    <a href="">Sửa</a>
-                    <a href="">
+                    <?php
+                        if($cate_pro->category_status==0){
+                            echo 'Ẩn';
+                        }else{
+                            echo 'Hiển thị';
+                        }
+                            
+                    ?>
+
+                </td>
+                <td>
+                    <a href="{{URL::to('/edit-category/'.$cate_pro->category_id)}}">Sửa</a>
+                    <a onclick="return confirm(' Bạn chắc chắn muốn xóa không?')" href="{{URL::to('/delete-category/'.$cate_pro->category_id)}}">
                         Xóa
                     </a>
                 </td>
             </tr>
+            @endforeach
         </tbody>
     </table>
 </div>

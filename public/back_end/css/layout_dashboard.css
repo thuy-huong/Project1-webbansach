@@ -10,6 +10,14 @@
     font-family: "Poppins", sans-serif;
     list-style: none;
 }
+
+span.text-alert {
+    color: red;
+    font-size: 17px;
+    text-align: center;
+    font-weight: bold;
+}
+
 li{
     list-style: none;
 }
