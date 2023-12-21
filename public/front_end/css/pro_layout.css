@@ -1,0 +1,123 @@
+img.img-fluid {
+    padding-bottom: 10px;
+}
+.menu-cate{
+    background-color: #fff;
+    border-radius: 4px 
+}
+.menu-cate ul{
+    list-style-type: none;
+    border: 1px solid  #dc6e4c;
+    width: 300px;
+    padding: 0 10px;
+    text-transform: uppercase;
+}
+.menu-cate li{
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid  #ccc;
+
+}
+.menu-cate li:last-child{
+    border-bottom: none;
+}
+.menu-cate li:first-child{
+    background-color: #dc6e4c;
+    margin: 0 -10px;
+    padding: 0 10px;
+}
+.menu-cate a{
+    text-decoration: none;
+    color: black;
+}
+.menu-cate a:hover{
+    color: red;
+}
+
+/* product */
+
+/* #item{
+    display: flex;
+    flex-wrap: wrap;
+}
+.sp{
+    float: left;
+    border: 1px  #e6e6e6 solid ;
+    text-align: center;
+    width: 235px;
+    height: 300px;
+    padding: 0 5px;
+    box-sizing: border-box;
+    align-content: flex-end
+} */
+
+/* .item_product_main{
+    position: relative;
+    margin-bottom: 20px;
+} */
+.product-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+.product-item .product-img{
+    padding: 5px ;
+    border-radius: 10px;
+}
+ .product-img img {
+    /* max-width: 100%;
+    max-height: 100%; */
+   
+    border: 1px  black solid ;
+    transition: all 0.3s;
+    border-radius: 10px
+}
+.product-item .product-infor a{
+    text-decoration: none;
+}
+.product-item .product-infor .name a {
+    color: black;
+    font-size: 15px;
+}
+.product-item .product-infor .name a:hover {
+    color: #dc6e4c;
+    font-size: 15px;
+    font-weight: 600;
+}
+.name{
+    height: 70px;
+    padding: 5px ;
+}
+.product-item .product-infor .price a {
+    color: red;
+    font-weight: 600;
+}
+.product-item .product-infor .price a:hover {
+    color: red;
+    font-weight: 700;
+}
+
+.price{
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+.add-card{
+    background-color: #dc6e4c;
+    text-align: center;
+    padding: 10px;
+    height: 40px;
+    width: 85%;
+    margin: 0 ;
+    border-radius: 10px;
+    padding-bottom: 30px;
+}
+.add-card i{
+    color: white;
+    font-size: 22px;
+}
+.add-card a:hover i{
+    font-size: 25px;
+}
+.col-6.col-md-4.col-lg-3 {
+    padding-bottom: 50px;
+}

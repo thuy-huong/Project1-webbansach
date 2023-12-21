@@ -24,7 +24,7 @@
                         ?> 
                     </span>    
                 </a></li>
-                <li><a href=""{{URL::to('/dashboard')}}"">
+                <li><a href="{{URL::to('/dashboard')}}">
                     <i class="fa-solid fa-gauge"></i>
                     <span class="nav-item">Bảng điều khiển</span>  
                 </a></li>
@@ -37,7 +37,7 @@
                         <li class="submenu2"><a href="">Thêm khách hàng</a></li>
                     </ul>
                 </li>
-                <li><a href="">
+                <li><a href="{{URL::to('/list-category')}}">
                     <i class="fa-solid fa-list"></i> 
                     <span class="nav-item">Quản lý danh mục</span> 
                 </a>
@@ -46,13 +46,13 @@
                         <li class="submenu2"><a href="{{URL::to('/add-category')}}">Thêm danh mục</a></li>
                     </ul>
                 </li>
-                <li><a href="">
+                <li><a href="{{URL::to('/list-product')}}">
                     <i class="fa-solid fa-tag"></i>  
                     <span class="nav-item">Quản lý sản phẩm</span>     
                 </a>
                     <ul>
-                            <li class="submenu2"><a href="">Danh sách sản phẩm</a></li>
-                            <li class="submenu2"><a href="">Thêm sản phẩm</a></li>
+                            <li class="submenu2"><a href="{{URL::to('/list-product')}}">Danh sách sản phẩm</a></li>
+                            <li class="submenu2"><a href="{{URL::to('/add-product')}}">Thêm sản phẩm</a></li>
                         </ul>
                 </li>
                 <li><a href="">
@@ -75,10 +75,16 @@
         </nav>
         <setion class="main">
             @yield('admin_content')
+
             @yield('add_category')
             @yield('list_category')
             @yield('edit_category')
 
+            @yield('add_product')
+            @yield('list_product')
+            @yield('edit_product')
+
+            
             
         </setion>
     </div>

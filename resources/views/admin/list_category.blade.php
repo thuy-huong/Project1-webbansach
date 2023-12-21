@@ -37,9 +37,9 @@
 
                 </td>
                 <td>
-                    <a href="{{URL::to('/edit-category/'.$cate_pro->category_id)}}">Sửa</a>
+                    <a href="{{URL::to('/edit-category/'.$cate_pro->category_id)}}"><i class="fa-solid fa-pen-to-square"></i></a>
                     <a onclick="return confirm(' Bạn chắc chắn muốn xóa không?')" href="{{URL::to('/delete-category/'.$cate_pro->category_id)}}">
-                        Xóa
+                        <i class="fa-solid fa-delete-left"></i>
                     </a>
                 </td>
             </tr>

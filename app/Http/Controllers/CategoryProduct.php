@@ -51,4 +51,10 @@ class CategoryProduct extends Controller
       session()->put('message', 'Xóa danh mục thành công');
       return redirect('/list-category');
    }
+
+
+   ///home
+   public function show_cate_home($category_id){
+
+   }
 }

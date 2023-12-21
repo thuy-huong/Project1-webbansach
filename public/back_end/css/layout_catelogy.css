@@ -1,6 +1,6 @@
 
 .form-container {
-    width: 90%;
+    width: 96%;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ddd;
@@ -44,9 +44,17 @@ select#category_status {
 }
 
 td a {
-    color: red;
     font-size: 14px;
     width: auto;
     padding: 10px;
-    padding-left: 30%;
+
+}
+
+i.fa-solid.fa-pen-to-square {
+    padding-left: 25%;
+    color: blue;
+}
+i.fa-solid.fa-delete-left {
+    color: red;
+    padding-left: 10%;
 }

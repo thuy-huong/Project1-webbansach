@@ -6,6 +6,10 @@
 
     <link href="{{asset('public/front_end/css/bootstrap.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('public/front_end/css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('public/front_end/css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('public/front_end/css/pro_layout.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
@@ -54,7 +58,7 @@
                                 </div>
                                 <div class="col-9">
                                     Xin chào!</br>
-                                    <a href=""><strong class="text-danger">Đăng nhập</strong></a>
+                                    <a href="{{URL::to('/login')}}"><strong class="text-danger">Đăng nhập</strong></a>
                                 </div>
                             </div> 
                         </div>
@@ -77,7 +81,7 @@
                 <ul id="main-menu">
                     <li><a href="{{URL::to('/trang-chu')}}">TRANG CHỦ</a></li>
                     <li><a href="{{URL::to('/gioi-thieu')}}">GIỚI THIỆU</a></li>
-                    <li><a href="#">TỦ SÁCH</a>
+                    <li><a href="{{URL::to('/san-pham')}}">TỦ SÁCH</a>
                         <ul class="sub-menu">
                             <li><a href="#">Havard Business Review</a></li>
                             <li><a href="#">Alpha Lead</a></li>
@@ -114,18 +118,22 @@
                             <li><a href="#">Sự Kiện</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">LIÊN HỆ</a></li>
+                    <li><a href="#in4">LIÊN HỆ</a></li>
                 </ul>
             </nav>   
     </section>
 
     <section class="myMainContent  my-1">
-        @yield('home')
+         @yield('home')
         @yield('intro')
+        @yield('login')
+        @yield('pro')
+
+       
 
     </section>
     
-    <section class="myFooter  text-white py-4">
+    <section  class="myFooter  text-white py-4">
             <div class="container-fluid">
                 <div class="fist-footer row">
                     <div class="col-md-4 py-3">
@@ -155,7 +163,7 @@
                             <li><a href=""><i class="fa-solid fa-angle-right"></i>  Chính sách đổi trả hoàn tiền</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-2">
+                    <div id="in4" class="col-md-2">
                         <h5 class="title-menu">Liên hệ</h5>
                         <ul class="list-menu">
                             <li><a href=""><i class="fa-solid fa-location-dot"></i> 28A Lê Trọng Tấn, Hà Đông, Hà Nội</a></li>
@@ -170,17 +178,20 @@
                     <strong>© Bản quyền thuộc về Đàm Thúy Hường</strong></div>
             </div>
     </section>
+   
     <script src="{{asset('public/front_end/js/bootstrap.bundle.min.js')}}"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script>
-        $(document).ready(function(){
-            //tìm tất cả li có sub-menu và thêm class has-child
-            $('.sub-menu').parent('li').addClass('has-child');
-        });
-    </script>
-    
-</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js" integrity="sha512-eP8DK17a+MOcKHXC5Yrqzd8WI5WKh6F1TIk5QZ/8Lbv+8ssblcz7oGC8ZmQ/ZSAPa7ZmsCU4e/hcovqR8jfJqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
+    $(document).ready(function(){
+        //tìm tất cả li có sub-menu và thêm class has-child
+        $('.sub-menu').parent('li').addClass('has-child');
+    });
+</script>
+<script>
+    //slider
     const imgPosition = document.querySelectorAll(".aspect-ratio-169 img")
     const imgContainer = document.querySelector('.aspect-ratio-169')
     const dotItem = document.querySelectorAll(".dot")
@@ -207,4 +218,17 @@
     setInterval(imgSlide, 5000);
 
 </script>
+    <script type="text/javascript">
+    //new_pro
+        $('.autoplay').slick({
+            slidesToShow: 5,
+            slidesToScroll: 4,
+            autoplay: true,
+            autoplaySpeed: 2000,
+        });
+		
+    
+    </script>
+    
+</body>
 </html>

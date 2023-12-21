@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{asset('public/back_end/css/reset.css')}}">
     <link rel="stylesheet" href="{{asset('public/back_end/css/layout_login.css')}}">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-    <title>Trang quản lý admin</title>
+    <title>Đăng nhập trang quản lý admin</title>
 </head>
 
 <body>

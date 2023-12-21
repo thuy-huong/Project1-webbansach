@@ -33,18 +33,38 @@
                             với các thế hệ doanh nhân, nhà quản lý và những người trẻ luôn khát khao xây dựng 
                             sự nghiệp thành công."
                         </div>
-                        <a href="https://alphabooks.vn/gioi-thieu" class="more" previewlistener="true">XEM THÊM <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="{{URL::to('/gioi-thieu')}}" class="more" previewlistener="true">XEM THÊM <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-        <section class="flash-sale">
-           flash-sale
-        </section> 
+
         <section class="new">
-            neww
+            <div class="container">
+                <h2 class="title-module">Sách mới phát hành</h2>
+                <div class="row  autoplay">
+                   
+                    @forEach($new_product as $key => $product)
+    
+                        <div class=" pro-box">
+                            <div class="pro-image">
+                                <a href="">
+                                    <img src="public/uploads/product/{{$product->product_image }}" width="200px" height="250px">
+                                </a>
+                            </div>
+                                <div class="pro-content">
+                                    <div class="pro-name"><a href="">{{$product->product_name }}</a></div>
+                                    <div class="pro-price"><a href=""><b>{{number_format($product->product_price , 0).' '.'VNĐ'}}</b></a></div>
+                                </div>
+                        </div>
+                    @endforEach
+                    
+                </div> 
+                <div class="all-pro">
+                    <a href="{{URL::to('/san-pham')}}" previewlistener="true">Xem tất cả</a>
+                </div>
+                
+            </div>
         </section>
-        <section class="bestsaler">
-            bestsaler
-        </section>
+    
 @endsection('home')

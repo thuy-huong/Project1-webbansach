@@ -10,13 +10,13 @@
                 <i class="fa-solid fa-user-large"></i>
                 <h3 style="color: red">Tổng số khách hàng</h3>
                 <p><b>500 khách hàng</b></p>
-                <button>Chi tiết</button>
+                <button><a href="{{URL::to('/list-product')}}">Chi tiết</a></button>
             </div>
             <div class="card">
                 <i class="fa-solid fa-coins"></i>
                 <h3 style="color: red">Tổng sản phẩm</h3>
                 <p><b>1234 sản phẩm</b></p>
-                <button>Chi tiết</button>
+                <button><a href="{{URL::to('/list-product')}}">Chi tiết</a></button>
             </div>
             <div class="card">
                 <i class="fa-solid fa-basket-shopping"></i>

@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IntroController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryProduct;
+use App\Http\Controllers\productController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,11 @@ use App\Http\Controllers\CategoryProduct;
 //frontend
 Route::get('/', [HomeController::class,'index']);
 Route::get('/trang-chu', [HomeController::class, 'index']);
-Route::get('/gioi-thieu', [IntroController::class, 'index']);
+Route::get('/gioi-thieu', [HomeController::class, 'intro']);
+Route::get('/san-pham', [HomeController::class, 'product']);
+
+Route::get('/danh-muc-san-pham/{category_id}', [CategoryProduct::class, 'show_cate_home']);
+// Route::get('/login', [IntroController::class, 'login']);
 
 //backend
 Route::get('/admin', [AdminController::class, 'index']);
@@ -36,3 +41,11 @@ Route::get('/delete-category/{category_id}', [CategoryProduct::class, 'delete'])
 Route::post('/update-category/{category_id}', [CategoryProduct::class, 'update']);
 
 ///product
+Route::get('/list-product', [productController::class, 'list']);
+Route::get('/add-product', [productController::class, 'add']);
+Route::post('/save-product', [productController::class, 'save']);
+Route::get('/search-product', [productController::class, 'search']);
+
+Route::get('/edit-product/{product_id}', [productController::class, 'edit']);
+Route::get('/delete-product/{product_id}', [productController::class, 'delete']);
+Route::post('/update-product/{product_id}', [productController::class, 'update']);

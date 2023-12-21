@@ -93,7 +93,7 @@ li:hover .submenu2{
 }
 .main{
     position: relative;
-    padding: 20px;
+    padding: 10px;
     width: 100%;
 }
 .main-top{
@@ -170,4 +170,11 @@ li:hover .submenu2{
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
