@@ -48,13 +48,13 @@
     
                         <div class=" pro-box">
                             <div class="pro-image">
-                                <a href="">
+                                <a href="{{URL::to('/chi-tiet-san-pham/'.$product->product_id)}}">
                                     <img src="public/uploads/product/{{$product->product_image }}" width="200px" height="250px">
                                 </a>
                             </div>
                                 <div class="pro-content">
-                                    <div class="pro-name"><a href="">{{$product->product_name }}</a></div>
-                                    <div class="pro-price"><a href=""><b>{{number_format($product->product_price , 0).' '.'VNĐ'}}</b></a></div>
+                                    <div class="pro-name"><a href="{{URL::to('/chi-tiet-san-pham/'.$product->product_id)}}">{{$product->product_name }}</a></div>
+                                    <div class="pro-price"><a href="{{URL::to('/chi-tiet-san-pham/'.$product->product_id)}}"><b>{{number_format($product->product_price , 0).' '.'VNĐ'}}</b></a></div>
                                 </div>
                         </div>
                     @endforEach

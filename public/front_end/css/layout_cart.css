@@ -1,0 +1,48 @@
+
+table.table.table-bordered {
+    margin: 5px;
+}
+ .total_area {
+    padding-bottom: 18px !important;
+  }
+ .total_area a{
+    text-decoration: none;
+    list-style: none;
+  }
+ .total_area ul{
+    list-style: none;
+  }
+  
+ .total_area, .chose_area {
+    border: 1px solid #E6E4DF;
+    color: #696763;
+    padding: 30px 25px 30px 0;
+    margin-left: 30px;
+  }
+  
+  .total_area span {
+    float: right;
+  }
+  
+  .total_area ul li {
+    background:#E6E4DF;
+    color: #696763;
+    margin-top: 10px;
+    padding: 7px 20px;
+  }
+.check_out {
+    margin-left: 20px;
+}
+.update, .check_out {
+    background: #FE980F;
+    border-radius: 0;
+    color: #FFFFFF;
+    margin-top: 18px;
+    border: none;
+    padding: 5px 15px;
+    margin-left: 50px;
+    border-radius: 10px
+}
+.pay {
+    margin: 50px;
+}

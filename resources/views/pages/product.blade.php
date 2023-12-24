@@ -37,7 +37,7 @@
                                 </div>
                             </div>
                             <div class="price">
-                                <a href={{URL::to('/chi-tiet-san-pham/'.$product->product_id)}}"" >{{number_format($product->product_price , 0).' '.'VNĐ'}}</a>
+                                <a href="{{URL::to('/chi-tiet-san-pham/'.$product->product_id)}}" >{{number_format($product->product_price , 0).' '.'VNĐ'}}</a>
                             </div>
                             
                         </div>
