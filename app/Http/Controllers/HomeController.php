@@ -24,4 +24,5 @@ class HomeController extends Controller
         return view('pages.product')->with('cate_product', $cate_product)->with('list_product', $list_product);;
     }
 
+    
 }

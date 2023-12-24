@@ -35,26 +35,6 @@ img.img-fluid {
 }
 
 /* product */
-
-/* #item{
-    display: flex;
-    flex-wrap: wrap;
-}
-.sp{
-    float: left;
-    border: 1px  #e6e6e6 solid ;
-    text-align: center;
-    width: 235px;
-    height: 300px;
-    padding: 0 5px;
-    box-sizing: border-box;
-    align-content: flex-end
-} */
-
-/* .item_product_main{
-    position: relative;
-    margin-bottom: 20px;
-} */
 .product-item {
     display: flex;
     flex-wrap: wrap;
@@ -85,7 +65,7 @@ img.img-fluid {
     font-weight: 600;
 }
 .name{
-    height: 70px;
+    height: 65px;
     padding: 5px ;
 }
 .product-item .product-infor .price a {
@@ -96,6 +76,7 @@ img.img-fluid {
     color: red;
     font-weight: 700;
 }
+
 
 .price{
     padding-left: 5px;
@@ -121,3 +102,161 @@ img.img-fluid {
 .col-6.col-md-4.col-lg-3 {
     padding-bottom: 50px;
 }
+
+/* detailsProduct */
+img {
+    max-width: 100%;
+}
+
+.product-image-details{
+    position: relative;
+    display: block;
+    border-radius: 5px;
+    height: 570px;
+    border: 3px #dc6e4c solid;
+    margin-bottom: 10px;
+}
+.product-image img {
+    border-radius: 5px;
+    width: auto !important;
+    max-height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;}
+
+.card {
+    background: #eee;
+    padding: 3em;
+    line-height: 1.5em;
+}
+
+.product-title,
+.price{
+    text-transform: UPPERCASE;
+    font-weight: bold;
+}
+
+.checked{
+    color: #ff9f1a;
+}
+.price span {
+    color: red;
+}
+.product-title {
+    margin-bottom: 15px;
+}
+
+.product-title {
+    margin-top: 0;
+}
+
+.add-to-cart,
+.like {
+    background: #ff9f1a;
+    padding: 1.2em 1.5em;
+    border: none;
+    text-transform: UPPERCASE;
+    font-weight: bold;
+    color: #fff;
+    -webkit-transition: background .3s ease;
+    transition: background .3s ease;
+}
+
+.add-to-cart:hover,
+.like:hover {
+    background: #b36800;
+    color: #fff;
+}
+
+.not-available {
+    text-align: center;
+    line-height: 2em;
+}
+
+.not-available:before {
+    font-family: fontawesome;
+    content: "\f00d";
+    color: #fff;
+}
+.details tr {
+    background-color: #ccc;
+    padding: 7px;
+    border: 1px #FFF solid;
+}
+.details table td {
+    padding: 7px;
+    border: 1px #FFF solid;
+}
+.text-muted,
+.details table  {
+    margin-bottom: 10px;
+}
+.details td:nth-child(1) {
+    width: 233px;}
+    .details table{
+        padding-bottom: 30px;
+    }
+
+
+/* pro-tab */
+
+  .tabs {
+    display: flex;
+    position: relative;
+  }
+  .tabs .line {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 6px;
+    border-radius: 15px;
+    background-color: #c23564;
+    transition: all 0.2s ease;
+  }
+  .tab-item {
+    min-width: 80px;
+    padding: 16px 20px 11px 20px;
+    font-size: 20px;
+    text-align: center;
+    color: #c23564;
+    background-color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 5px solid transparent;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: all 0.5s ease;
+  }
+  .tab-icon {
+    font-size: 24px;
+    width: 32px;
+    position: relative;
+    top: 2px;
+  }
+  .tab-item:hover {
+    opacity: 1;
+    background-color: rgba(194, 53, 100, 0.05);
+    border-color: rgba(194, 53, 100, 0.1);
+  }
+  .tab-item.active {
+    opacity: 1;
+  }
+  .tab-content {
+    padding: 28px 0;
+  }
+  .tab-pane {
+    color: #333;
+    display: none;
+  }
+  .tab-pane.active {
+    display: block;
+  }
+  .tab-pane h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  

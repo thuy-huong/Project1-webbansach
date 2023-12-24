@@ -55,6 +55,11 @@ class CategoryProduct extends Controller
 
    ///home
    public function show_cate_home($category_id){
-
+         $list_cate_home = DB::table('tbl_product')->join('tbl_category','tbl_category.category_id','=','tbl_product.product_cate')
+      ->where('category_id', '=', $category_id)->get();
+      $cate_product = DB::table('tbl_category')->where('category_status', '=', '1')->get();
+      return view('pages.show_product_cate')
+         ->with('list_cate_home', $list_cate_home)
+         ->with('cate_product',$cate_product);
    }
 }

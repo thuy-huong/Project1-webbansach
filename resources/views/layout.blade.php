@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{asset('public/front_end/css/app.css')}}">
     <link rel="stylesheet" href="{{asset('public/front_end/css/app.css')}}">
     <link rel="stylesheet" href="{{asset('public/front_end/css/pro_layout.css')}}">
+    <link rel="stylesheet" href="{{asset('public/front_end/css/layout_login_checkout.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -22,7 +23,7 @@
         <div class="container py-3">
             <div class="row">
                 <div class="logo col-md-2">
-                    <a href="{{URL::to('/trang-chu')}}"><img src="{{('public/front_end/images/logo.webp')}}" class="img-fluid" alt="Logo"></a>
+                    <a href="{{URL::to('/trang-chu')}}"><img src="{{('/public/front_end/images/logo.webp')}}" class="img-fluid" alt="Logo"></a>
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-4 ">
@@ -57,8 +58,26 @@
                                     </div>
                                 </div>
                                 <div class="col-9">
-                                    Xin chào!</br>
-                                    <a href="{{URL::to('/login')}}"><strong class="text-danger">Đăng nhập</strong></a>
+                                   
+                                    <?php
+                                    $customer_id = session()->get('customer_id');
+                                    $customer_name = session()->get('customer_name');
+                                    if($customer_id!=NULL){
+                                        echo $customer_name;
+                                        echo '</br>';
+                                    ?>
+                                        <a href="{{URL::to('/logout-checkout')}}"><strong class="text-danger">Đăng xuất</strong></a>
+
+                                    <?php
+                                     }else{
+                                    ?>
+                                       Xin chào!</br>
+                                       <a href="{{URL::to('/login-checkout')}}"><strong class="text-danger">Đăng nhập</strong></a>
+                                    <?php
+                                     }
+                                    ?>
+            
+                                 
                                 </div>
                             </div> 
                         </div>
@@ -124,12 +143,15 @@
     </section>
 
     <section class="myMainContent  my-1">
-         @yield('home')
+        @yield('home')
         @yield('intro')
         @yield('login')
         @yield('pro')
-
-       
+        @yield('procate')
+        @yield('detailsProduct')
+        @yield('show_cart')
+        @yield('loginCheckout')
+        @yield('showCheckout')
 
     </section>
     
@@ -138,7 +160,7 @@
                 <div class="fist-footer row">
                     <div class="col-md-4 py-3">
                             <a href="{{URL::to('/trang-chu')}}">
-                                <img src="{{('public/front_end/images/logo_footer.webp')}}" class="img-fluid" alt="logo">
+                                <img src="{{('/public/front_end/images/logo_footer.webp')}}" class="img-fluid" alt="logo">
                             </a>
                     </div>
                     <div class="col-md-1"></div>

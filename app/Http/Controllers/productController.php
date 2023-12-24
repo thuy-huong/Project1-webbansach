@@ -91,5 +91,12 @@ class productController extends Controller
         return view('admin.list_product')->with('list_product', $list_product);
      }
 
+     //
+     public function details_product($product_id){
+        $details_product = DB::table('tbl_product')->join('tbl_category','tbl_category.category_id','=','tbl_product.product_cate')
+        ->where('tbl_product.product_id','=',$product_id)->get();
+
+        return view('pages.product.show_details_product')->with('details_product',$details_product);
+     }
 
 }
