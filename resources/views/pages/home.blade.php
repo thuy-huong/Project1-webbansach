@@ -54,7 +54,7 @@
                             </div>
                                 <div class="pro-content">
                                     <div class="pro-name"><a href="{{URL::to('/chi-tiet-san-pham/'.$product->product_id)}}">{{$product->product_name }}</a></div>
-                                    <div class="pro-price"><a href="{{URL::to('/chi-tiet-san-pham/'.$product->product_id)}}"><b>{{number_format($product->product_price , 0).' '.'VNĐ'}}</b></a></div>
+                                    <div class="pro-price"><a href="{{URL::to('/chi-tiet-san-pham/'.$product->product_id)}}"><b>{{number_format($product->product_price , 0,',', '.').' '.'VNĐ'}}</b></a></div>
                                 </div>
                         </div>
                     @endforEach

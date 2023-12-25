@@ -28,6 +28,7 @@ class CartController extends Controller
         $data['weight'] =  '123';
         $data['options']['image'] =  $product_infor->product_image;
         Cart::add($data);
+        Cart::setGlobalTax(5);
         return redirect('/show-cart');
     }
         public function show_cart(){
@@ -36,6 +37,12 @@ class CartController extends Controller
         }
         public function delete_to_cart($rowId){
             cart::update($rowId,0);
+            return redirect('/show-cart');
+        }
+        public function update_cart_qty(request $_request){
+            $rowId = $_request->rowId_cart;
+            $qty = $_request->cart_quantity;
+            cart::update( $rowId,  $qty);
             return redirect('/show-cart');
         }
         

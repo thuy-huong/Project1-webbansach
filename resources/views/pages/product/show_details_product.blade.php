@@ -37,7 +37,7 @@
                                 </div>
 
                                 <p></p><small class="text-muted">Giá cũ: <s><span></span></span></s></small>
-                                <p></p><h4 class="price">Giá hiện tại: <span>{{number_format($details_pro->product_price , 0).' '.'VNĐ'}}</span></h4>
+                                <p></p><h4 class="price">Giá hiện tại: <span>{{number_format($details_pro->product_price , 0,',', '.').' '.'VNĐ'}}</span></h4>
                                 <table >
                                     <tbody>
                                         <tr>

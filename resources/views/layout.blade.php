@@ -28,12 +28,16 @@
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-4 ">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Nhập từ khóa tìm kiếm" 
-                            aria-label="Nhập từ khóa tìm kiếm" aria-describedby="basic-addon2">
-                        <span class="input-group-text" id="basic-addon2">
-                            <i class="fa-solid fa-magnifying-glass"></i></span>
-                      </div> 
+                    <form action="{{URL::to('tim-kiem')}}" method="POST">
+                        <div class="input-group mb-3">
+                            {{ csrf_field() }}
+                            <input type="text" class="form-control" placeholder="Nhập từ khóa tìm kiếm" 
+                                aria-label="Nhập từ khóa tìm kiếm" aria-describedby="basic-addon2" name="keyword_submit">
+                            <button type="submit" class="input-group-text" id="basic-addon2">
+                                <i class="fa-solid fa-magnifying-glass"></i></button>
+                           
+                        </div> 
+                    </form>
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-3 ">
@@ -67,13 +71,13 @@
                                         echo $customer_name;
                                         echo '</br>';
                                     ?>
-                                        <a href="{{URL::to('/logout-checkout')}}"><strong class="text-danger">Đăng xuất</strong></a>
+                                        <a href="{{URL::to('/logout-customer')}}"><strong class="text-danger">Đăng xuất</strong></a>
 
                                     <?php
                                      }else{
                                     ?>
                                        Xin chào!</br>
-                                       <a href="{{URL::to('/login-checkout')}}"><strong class="text-danger">Đăng nhập</strong></a>
+                                       <a href="{{URL::to('/login-customer')}}"><strong class="text-danger">Đăng nhập</strong></a>
                                     <?php
                                      }
                                     ?>
@@ -85,10 +89,13 @@
                     </div>
                 </div>
                 <div class="col-md-1">
-                    <a href="#" class="position-relative">
+                    <a href="{{URL::to('/show-cart')}}" class="position-relative">
                         <span class="fs-2"><i class="fa-solid fa-bag-shopping"></i></span>
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            0
+                            <?php
+                                $count=Cart::count();
+                                echo  $count;
+                            ?>
                         </span>
                       </a>
                 </div>
@@ -103,26 +110,9 @@
                     <li><a href="{{URL::to('/gioi-thieu')}}">GIỚI THIỆU</a></li>
                     <li><a href="{{URL::to('/san-pham')}}">TỦ SÁCH</a>
                         <ul class="sub-menu">
-                            <li><a href="#">Havard Business Review</a></li>
-                            <li><a href="#">Alpha Lead</a></li>
-                            <li><a href="#">Quản trị doanh nghiệp</a>
-                                <ul class="sub-menu">
-                                    <li><a href="#">Lãnh đạo & Quản lý</a></li>
-                                    <li><a href="#">Chiến lược doanh nghiệp</a></li>
-                                    <li><a href="#">Khởi nghiệp</a></li>
-                                    <li><a href="#">Nhân sự & Văn hóa doanh nghiệp</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Tài chính - Đầu tư - Chứng khoán</a></li>
-                            <li><a href="#">Công nghệ & Chuyển đổi số</a></li>
-                            <li><a href="#">Marketing & Bán hàng</a></li>
-                            <li><a href="#">Kỹ năng</a>
-                                <ul class="sub-menu">
-                                    <li><a href="#">Giao tiếp, đàm phán & thuyết phục</a></li>
-                                    <li><a href="#">Tư duy sáng tạo</a></li>
-                                    <li><a href="#">Phát triển bản thân & tâm lý</a></li>
-                                </ul>
-                            </li>
+                            @forEach( $cate_product as $key =>$cate)
+                                <li><a href="{{URL::to('/danh-muc-san-pham/'.$cate->category_id)}}">{{$cate->category_name}}</a></li>
+                            @endforeach
                         </ul>
                     </li>
                     <li><a href="https://hoptacxuatban.alphabooks.vn/">DỊCH VỤ HTXB</a></li>
@@ -153,6 +143,7 @@
         @yield('show_cart')
         @yield('loginCheckout')
         @yield('showCheckout')
+        @yield('payment')
 
     </section>
     

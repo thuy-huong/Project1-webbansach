@@ -13,11 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_author', function (Blueprint $table) {
-            $table->increments('author_id');
-            $table->string('author_name');
-            $table->string('author_phone'); 
-            $table->string('author_name');
+        Schema::create('tbl_order_details', function (Blueprint $table) {
+            $table->increments('order_details_id');
+            $table->integer('order_id');
+            $table->integer('product_id');
+            $table->string('product_name');
+            $table->float('product_price');
+            $table->integer('product_sales_quantity');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_author');
+        Schema::dropIfExists('tbl_order_details');
     }
 };

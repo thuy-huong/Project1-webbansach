@@ -58,3 +58,6 @@ i.fa-solid.fa-delete-left {
     color: red;
     padding-left: 10%;
 }
+tr {
+    height: 35px;
+}

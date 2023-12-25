@@ -9,11 +9,12 @@
             <input type="email" name="customer_email" placeholder="Email" />
             <input type="password" name="customer_password" placeholder="Mật khẩu" />
             <input type="text" name="customer_phone" placeholder="Số điện thoại" />
+            <input type="hidden" name="customer_status" id="customer_status" value="1">
             <button type="submit">Đăng ký</button>
         </form>
     </div>
     <div class="form-container sign-in-container">
-        <form action="#">
+        <form action="{{URL::to('/check-login')}}" method="post">
             <?php
             
             $message = session()->get('message');
@@ -22,9 +23,10 @@
                 session()->put('message', null);
             }
         ?> 
+        {{ csrf_field() }}
             <h1>Đăng nhập</h1>
-            <input type="email"  placeholder="Email" />
-            <input type="password" placeholder="Password" />
+            <input type="email" name="customer_email" placeholder="Email" />
+            <input type="password" name="customer_password" placeholder="Password" />
             {{-- <a href="#">Forgot your password?</a> --}}
             <button>Đăng nhập</button>
         </form>

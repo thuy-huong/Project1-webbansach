@@ -14,7 +14,7 @@
 
         <thead>
             <tr>
-                <th>Mã danh mục</th>
+                <th>Mã DM</th>
                 <th>Tên danh mục</th>
                 <th>Trạng thái</th>       
                 <th>Chức năng</th>    

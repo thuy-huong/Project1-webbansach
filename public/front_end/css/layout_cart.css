@@ -46,3 +46,10 @@ table.table.table-bordered {
 .pay {
     margin: 50px;
 }
+.text-right input[type="number"] {
+  width: 50px;
+  border: gray solid 1px;
+}
+i.fa-solid.fa-check {
+  color: rgb(33, 193, 44);
+}

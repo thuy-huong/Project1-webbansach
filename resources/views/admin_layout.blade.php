@@ -28,14 +28,10 @@
                     <i class="fa-solid fa-gauge"></i>
                     <span class="nav-item">Bảng điều khiển</span>  
                 </a></li>
-                <li><a href="">
+                <li><a href="{{URL::to('/list-customer')}}">
                     <i class="fa-solid fa-user"></i> 
                     <span class="nav-item">Quản lý Khách hàng</span> 
                 </a>
-                    <ul>
-                        <li class="submenu2"><a href="">Danh sách khách hàng</a></li>
-                        <li class="submenu2"><a href="">Thêm khách hàng</a></li>
-                    </ul>
                 </li>
                 <li><a href="{{URL::to('/list-category')}}">
                     <i class="fa-solid fa-list"></i> 
@@ -83,6 +79,8 @@
             @yield('add_product')
             @yield('list_product')
             @yield('edit_product')
+
+            @yield('list_customer')
 
             
             
