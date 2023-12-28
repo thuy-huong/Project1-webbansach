@@ -28,9 +28,9 @@
                     <td class="text-right">
                         <form action="{{URL::to('/update-cart-qty')}}" method="post">
                             {{ csrf_field() }}
-                            <input type="number" name="cart_quantity" value="{{$v_content->qty}}" class="btn btn-defaul btn-sm">
+                            <input type="number" name="cart_quantity" min="1" value="{{$v_content->qty}}" class="btn btn-defaul btn-sm">
                             <input type="hidden" value="{{$v_content->rowId}}" name="rowId_cart" value="form-control">
-                            <button type="submit" name="update_qty" id="update_qty" class="btn btn-defaul btn-sm">
+                            <button type="submit" name="update_qty"  id="update_qty" class="btn btn-defaul btn-sm">
                                 <i class="fa-solid fa-check"></i>
                             </button>
                         </form>
@@ -72,30 +72,30 @@
                         aria-hidden="true"></i>&nbsp;Tiếp tục mua sắm</a>
                         <?php
                             $customer_id = session()->get('customer_id');
-                            $customer_name = session()->get('customer_name');
                             $shipping_id = session()->get('shipping_id');
-                            if($customer_id!=NULL&&$shipping_id!=NULl){
+                            
+                            if($customer_id!=null&&$shipping_id!=null){
                         ?>
-                             <a href="{{URL::to('/payment')}}" class="btn btn-primary btn-md">
+                            <a href="{{URL::to('/payment')}}" class="btn btn-primary btn-md">
                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Thanh toán
                             </a>
                         <?php
-                         }elseif ($customer_id!=NULL&&$shipping_id==NULl) {
+                            }elseif ($customer_id!=null&&$shipping_id==null) {
                         ?>
-                              <a href="{{URL::to('/checkout')}}" class="btn btn-primary btn-md">
+                             <a href="{{URL::to('/checkout')}}" class="btn btn-primary btn-md">
                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Thanh toán
                             </a>
                         <?php
-                         }else{
+                            }else {
                         ?>
-                           <a href="{{URL::to('/login-checkout')}}" class="btn btn-primary btn-md">
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Thanh toán
-                        </a>
+                             <a href="{{URL::to('/login-customer')}}" class="btn btn-primary btn-md">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Thanh toán
+                            </a>
                         <?php
-                         }
+                            }
                         ?>
-
-                   
+                            
+                           
                 </div>
             </div>
         </div>

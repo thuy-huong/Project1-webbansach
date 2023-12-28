@@ -68,6 +68,7 @@ Route::get('/login-checkout', [CheckoutController::class, 'login_checkout']);
 Route::post('/add-customer', [CheckoutController::class, 'add_customer']);
 Route::get('/checkout', [CheckoutController::class, 'checkout']);
 Route::post('/save-checkout-customer', [CheckoutController::class, 'save_checkout_customer']);
+Route::post('/update-checkout-customer/{shipping_id}', [CheckoutController::class, 'update_checkout_customer']);
 Route::get('/payment', [CheckoutController::class, 'payment']);
 Route::post('/order-place', [CheckoutController::class, 'order_place']);
 
@@ -85,3 +86,12 @@ Route::get('/login-customer', [CustomerController::class, 'login']);
 Route::post('/add-customer', [CustomerController::class, 'add_customer']);
 Route::post('/check-login', [CustomerController::class, 'check']);
 Route::get('/logout-customer', [CustomerController::class, 'logout_customer']);
+Route::get('/thong-tin-khachhang/{customer_id}', [CustomerController::class, 'customer_infor']);
+Route::post('/update-customer/{customer_id}', [CustomerController::class, 'update_customer']);
+Route::post('/update-password/{customer_id}', [CustomerController::class, 'update_password']);
+
+///order 
+Route::get('/manage-order', [CheckoutController::class, 'manage_order']);
+Route::get('/view-order/{order_id}', [CheckoutController::class, 'view_order']);
+Route::get('/accept-order/{order_id}', [CheckoutController::class, 'accept_order']);
+Route::get('/delivery-order/{order_id}', [CheckoutController::class, 'delivery_order']);

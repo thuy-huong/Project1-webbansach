@@ -13,10 +13,10 @@
             }
         ?> 
             {{ csrf_field() }}
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label for="categoryName">Mã Danh Mục:</label>
                 <input type="text" id="category_id" name="category_id">
-            </div>
+            </div> --}}
             <div class="form-group">
                 <label for="categoryName">Tên Danh Mục:</label>
                 <input type="text" id="category_name" name="category_name" required>

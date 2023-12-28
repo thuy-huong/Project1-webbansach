@@ -7,10 +7,10 @@
         <form id="newCategoryForm" action="{{URL::to('/update-product/'.$edit_value->product_id)}}" method="post">
             <h2>Chỉnh sửa sản phẩm</h2>
             {{ csrf_field() }}
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="productName">Mã sản phẩm:</label>
                     <input type="text" id="product_id" name="product_id" readonly value="{{$edit_value->product_id}}">
-                </div>
+                </div> --}}
                 <div class="form-group">
                     <label for="productName">Tên sản phẩm:</label>
                     <input type="text" id="product_name" name="product_name" required value="{{$edit_value->product_name}}">

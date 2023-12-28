@@ -62,15 +62,20 @@
                                         <i class="fa-regular fa-user"></i></i>
                                     </div>
                                 </div>
-                                <div class="col-9">
+                                <div class="col-9 customer_home">
                                    
                                     <?php
                                     $customer_id = session()->get('customer_id');
                                     $customer_name = session()->get('customer_name');
                                     if($customer_id!=NULL){
-                                        echo $customer_name;
-                                        echo '</br>';
+                                        
                                     ?>
+                                        <a href="{{URL::to('/thong-tin-khachhang/'.$customer_id)}}" >
+                                            <?php
+                                                echo $customer_name;
+                                                echo '</br>';
+                                            ?>
+                                        </a>
                                         <a href="{{URL::to('/logout-customer')}}"><strong class="text-danger">Đăng xuất</strong></a>
 
                                     <?php
@@ -144,6 +149,7 @@
         @yield('loginCheckout')
         @yield('showCheckout')
         @yield('payment')
+        @yield('customer_infor')
 
     </section>
     

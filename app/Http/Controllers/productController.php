@@ -10,11 +10,21 @@ session_start();
 
 class productController extends Controller
 {
+    public function AuthLogin(){
+        $admin_id =  session()->get('admin_id');
+        if( $admin_id){
+            return redirect('/dashboard');
+        }else{
+            return redirect('/admin')->send();
+        }
+    }
     public function add(){
+        $this->AuthLogin();
          $cate =  DB::table('tbl_category')->orderby('category_id','desc')->get(); 
          return view('admin.add_product')->with('cate', $cate);
      }
     public function list(){
+        $this->Authlogin();
          $list_product = DB::table('tbl_product')->join('tbl_category','tbl_category.category_id','=','tbl_product.product_cate')
          ->orderby('tbl_product.product_id','desc')->get();
          return view('admin.list_product')->with('list_product', $list_product);
@@ -54,7 +64,7 @@ class productController extends Controller
   
      public function update(request $_request,$product_id){
          $data = array();
-         $data['product_id'] = $_request->product_id;
+        //  $data['product_id'] = $_request->product_id;
          $data['product_name'] = $_request->product_name;
          $data['product_cate'] = $_request->product_cate;
          $data['product_author'] = $_request->product_author;

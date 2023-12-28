@@ -51,7 +51,7 @@
                             <li class="submenu2"><a href="{{URL::to('/add-product')}}">Thêm sản phẩm</a></li>
                         </ul>
                 </li>
-                <li><a href="">
+                <li><a href="{{URL::to('/manage-order')}}">
                     <i class="fa-solid fa-dolly"></i>  
                     <span class="nav-item">Quản lý đơn hàng</span>     
                 </a></li>
@@ -81,6 +81,9 @@
             @yield('edit_product')
 
             @yield('list_customer')
+
+            @yield('order')
+            @yield('viewOrder')
 
             
             

@@ -32,6 +32,8 @@ class CartController extends Controller
         return redirect('/show-cart');
     }
         public function show_cart(){
+            $customer_id = session()->get('customer_id');
+            // $shipping = DB::table('tbl_')
             $cate_product = DB::table('tbl_category')->where('category_status', '=', '1')->get();
             return view('pages.cart.show_cart')->with('cate_product',$cate_product );
         }

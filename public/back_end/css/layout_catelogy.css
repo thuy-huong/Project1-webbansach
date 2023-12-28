@@ -61,3 +61,6 @@ i.fa-solid.fa-delete-left {
 tr {
     height: 35px;
 }
+tbody{
+    text-align: center;
+}
